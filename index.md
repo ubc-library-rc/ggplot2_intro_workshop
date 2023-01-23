@@ -6,14 +6,14 @@ nav_order: 1
 
 ## Note: this workshop is in development and not yet complete.
 
-Description...
+R viz 
 
 ## Learning objectives
 
 At the end of this workshop, you will be able to:
-1.
-2.
-3.
+1. Visualize data 
+2. make a ggplot
+3. code
 
 ## Schedule
 
