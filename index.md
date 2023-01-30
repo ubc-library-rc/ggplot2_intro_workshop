@@ -6,7 +6,7 @@ nav_order: 1
 
 ## Note: this workshop is in development and not yet complete.
 
-R viz 
+R viz testing
 
 ## Learning objectives
 
