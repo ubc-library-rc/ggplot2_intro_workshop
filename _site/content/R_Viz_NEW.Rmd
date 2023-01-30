@@ -1,0 +1,338 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+DATA VISUALIZATION WITH GGPLOT2
+
+###Workshop material: 
+
+(1) Intro/getting started 
+(2) Basic ggplot plots 
+(3) Customizing ggplot aesthetics 
+(4) Facetting 
+(5) Animated and interactive plots 
+(6) Conclusion
+
+##1.INTRO/GETTING STARTED 
+
+Install R packages
+
+Remove the #s if you need to run this code to install a package/multiple packages
+
+```{r}
+#install.packages("gapminder")
+#install.packages("viridis")
+#install.packages("plotly")
+#install.packages("gganimate")
+#install.packages("gifski")
+#install.packages("htmlwidget")
+```
+
+Load packages
+```{r warning = FALSE, message = FALSE}
+library(gapminder) # package with a gapminder dataset
+library(viridis) # color palette package
+library(plotly) # package for interactive data visualizations
+library(gganimate) # package for producing gifs, extension of ggplot2
+library(gifski) # package for converting video frames to GIF animations
+library(htmlwidgets) # save interactive plot as an html file
+```
+
+#Basic ggplot structure (the grammar of graphics!): 
+
+ggplot(aes(x, y), data) + 
+  geom +
+  additional geoms + 
+  thematic arguments 
+
+#Plots you can make with ggplot: 
+
+-Barcharts
+-Histograms
+-Scatterplots 
+-Boxplots
+-Density plots
+-Violin plots
+...And many more 
+
+#You can customize: 
+-Labels
+-Colours
+-Legends 
+-Trendlines 
+-Scales
+...And much more 
+
+Today we will be working with the countries dataset from gapminder: 
+
+```{r}
+countries <- gapminder 
+head(countries)
+```
+##BASIC GGPLOT PLOTS
+
+lets start with creating a bar chart - This will show the distribution of a categorical variable, like our continent variable. Recall the basic structure of ggplot2 code: 
+
+ggplot(aes(x, y), data) + 
+  geom 
+  
+We will start with building the most basic plot possible, with no modifications to the theme.
+
+```{r}
+ggplot(aes(x = continent), data = countries) + 
+  geom_bar()
+```
+
+Note than in a barplot there is no 'y' variable, as it is a count of the data.
+
+This is similar to a histogram, but a histogram is for showing the distribution of a numeric variable, like life expentancy: 
+
+```{r}
+ggplot(aes(x = lifeExp), data = countries) + 
+  geom_histogram()
+```
+
+To create a plot with an x and a y variable, all we need to do is specify an additional argument: 
+
+```{r}
+#one numeric variable, one categorical: 
+ggplot(aes(x = continent, y = lifeExp), data = countries) + 
+  geom_boxplot()
+```
+
+#PRACTICE: 
+
+Using the iris dataset, create a scatter plot ( geom_point() )
+of Petal.Length (x variable) vs Sepal.length (y variable)
+
+```{r}
+head(iris)
+
+#Answer: 
+
+ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +   geom_point()
+
+```
+
+##CUSTOMIZING GGPLOT AESTHETICS
+
+There are a number of aesthetics you can customize in ggplot to improve the clarity or complexity of your plots, and make them publication/thesis worthy. The grammar/structure of how you do so is consistent across plot types.
+
+Note that modifying aesthetics can complicate/lengthen your plot's code very quickly. 
+
+Returning to our iris scatterplot, we may want to add more informative labels: 
+
+```{r}
+ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +   geom_point() + 
+  labs(x = 'Petal length (cm)', 
+       y= 'Sepal length (cm)', 
+       title = 'Petal length vs sepal length of irises')
+```
+To modify this text to be more aesthetically pleasing:
+
+```{r}
+ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +   
+  geom_point() + 
+  labs(x = 'Petal length (cm)', 
+       y= 'Sepal length (cm)', 
+       title = 'Petal length vs sepal length of irises') + 
+  theme(plot.title = element_text(hjust = 0.5, 
+                                  face = 'bold',
+                                  size = 18))
+
+```
+
+With this same structure (ie if we replaced 'plot.title'), we could modify: 
+
+axis text: axis.text
+axis labels: axis.title
+
+Our data is clearly positively trended. We could visualize this trend using 'geom_smooth': 
+
+```{r}
+ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +   geom_point() + 
+  geom_smooth(method = 'lm', se = FALSE) #specifying a linear   trendline with no standard error interval
+```
+
+Our data is also clearly in groups (in this case, it has to do with species). We can visualize this with a color argument: 
+
+```{r}
+ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
+  geom_point(aes(col = Species)) + 
+  geom_smooth(method = 'lm', se = FALSE, col = 'black') #we     can also specify the color of the trendline 
+```
+This plot illustrates a key distinction in specifying attributes of a plot - when you specify something, like colour (col) WITHIN aes(), it becomes a part of the legend, and is usually distinguished by values of a specified variable (in this case, species). 
+
+When you specify OUTSIDE aes(), it is a simple aesthetic specification and you provide the colour directly (in this case, 'black'). 
+
+To modify the colours when col is specified within aes, additional code is needed: 
+
+```{r}
+unique(iris$Species)
+
+ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
+  geom_point(aes(col = Species)) + 
+  geom_smooth(method = 'lm', se = FALSE, col = 'grey25')+
+  scale_color_manual(values = c("turquoise3", "goldenrod1","salmon2")) 
+```
+There are also packages with built in color scales that are aesthetically pleasing and color-blind friendly, e.g. 'viridis': 
+
+```{r}
+ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
+  geom_point(aes(col = Species)) + 
+  geom_smooth(method = 'lm', se = FALSE, col = 'grey25')+
+  scale_color_viridis(discrete = TRUE) #specifying colours for a discrete variable 
+```
+
+These colours/scales are further customizable. If interested, see: 
+https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html
+
+Similarly, there are shortcuts for modifying our entire 'theme': 
+
+```{r}
+ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
+  geom_point(aes(col = Species)) + 
+  geom_smooth(method = 'lm', se = FALSE, col = 'black')+
+  theme_bw()
+```
+or: 
+
+```{r}
+ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
+  geom_point(aes(col = Species)) + 
+  geom_smooth(method = 'lm', se = FALSE, col = 'black')+
+  theme_minimal()
+```
+
+if we combine ALL the modifications so far in the workshop:
+
+```{r}
+ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
+  geom_point(aes(col = Species)) + 
+  labs(x = 'Petal length (cm)', 
+       y= 'Sepal length (cm)', 
+       title = 'Petal length vs sepal length of irises') +
+  geom_smooth(method = 'lm', se = FALSE, col = 'grey25')+
+  scale_color_viridis(discrete = TRUE)+
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5, 
+                                  face = 'bold',
+                                  size = 16)) #additional theme modifications have to come after theme_minimal to not be overridden 
+```
+
+You can save your graphs from the plot window, or to your working directory using code (with the ggsave function) if you assign your plot to an object: 
+
+```{r}
+myplot <- ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
+  geom_point(aes(col = Species)) + 
+  labs(x = 'Petal length (cm)', 
+       y= 'Sepal length (cm)', 
+       title = 'Petal length vs sepal length of irises') +
+  geom_smooth(method = 'lm', se = FALSE, col = 'grey25')+
+  scale_color_viridis(discrete = TRUE)+
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5, 
+                                  face = 'bold',
+                                  size = 16)) 
+
+ggsave("myplot.png", plot = myplot, device="png", width = 8, height = 5)
+
+getwd()
+```
+
+PRACTICE: 
+
+Using the countries dataset, plot gdpPercap (gdp per capita, x variable) vs lifeExp (life expectancy). Have each year in the dataset be a unique colour, and set the colours to the viridis scale. Add informative x and y axis labels. Add a linear trendline to the plot.
+
+```{r} 
+ggplot(aes(x=gdpPercap, y=lifeExp), data = countries)+
+  geom_point(aes(col = year)) +
+  geom_smooth(method = 'lm', se = FALSE, col = 'grey25') +
+  scale_colour_viridis()+
+  labs(x = 'GDP per capita ($)', y = 'life expectancy (yrs)')+ 
+  theme_bw()
+```
+
+You will notice our data is non-linear - we can modify our plot by log-ing the x variable to correct for this:
+
+```{r} 
+ggplot(aes(x=log(gdpPercap), y=lifeExp), data = countries)+
+  geom_point(aes(col = year)) +
+  geom_smooth(method = 'lm', se = FALSE, col = 'grey25') +
+  scale_colour_viridis()+
+  labs(x = 'log 10 of GDP per capita ($)', y = 'life expectancy (yrs)')+ 
+  theme_bw()
+```
+
+It is hard to see individual trends in this plot. We could add a separate trendline for each year: 
+
+```{r} 
+countries$year<-as.character(countries$year) #need our data to be categorical instead of continuous for this
+
+ggplot(aes(x=log(gdpPercap), y=lifeExp), data = countries)+
+  geom_point(aes(col = year)) +
+  geom_smooth(aes(col = year),method = 'lm', se = FALSE) +
+  scale_colour_viridis(discrete = TRUE)+
+  labs(x = 'log 10 of GDP per capita ($)', y = 'life expectancy (yrs)')+ 
+  theme_bw()
+```
+
+###FACETTING
+
+Even better, we could use facetting to seperate our plot out by year: 
+
+```{r}
+ggplot(aes(x=log(gdpPercap), y=lifeExp), data = countries)+
+  geom_point(aes(col = year)) +
+  geom_smooth(col = 'grey25',method = 'lm', se = FALSE) +
+  scale_colour_viridis(discrete = TRUE)+
+  labs(x = 'log 10 of GDP per capita ($)', y = 'life expectancy (yrs)') +
+  theme_bw() + 
+  facet_wrap(~year)
+```
+###ANIMATED AND INTERACTIVE PLOTS
+
+And perhaps more powerfully, we could animate our plot to show the evolution of our trend through time: 
+
+```{r}
+countries$year<-as.numeric(countries$year) #need our data to be categorical instead of continuous for this
+
+gif_countries <- 
+  ggplot(aes(x=log(gdpPercap), y=lifeExp), 
+         data = countries)+
+      geom_point(aes(col = continent), alpha = 0.75)+
+      scale_colour_viridis(discrete = TRUE)+
+      transition_time(year)+
+      shadow_wake(wake_length = 0.5)+
+      labs(title="Life expectancy vs GDP per  capita in {frame_time}",
+           x="Log 10 of GDP per capita", 
+           y="Life expectancy")+ 
+  theme_bw()
+
+gif_countries
+
+#can save with:
+anim_save("countries.gif", animation = gif_countries, path = NULL)
+```
+
+
+We could also make our plot interactive, instead of animated. For illustrative purposes, we will restrict our data to 2007. 
+
+```{r}
+
+countries07 <- countries[countries$year==2007,]
+plot07 <- ggplot(aes(x=log(gdpPercap), y=lifeExp), data = countries07)+
+      geom_point(aes( color=continent))+
+      labs(title="Life expectancy vs GDP per capita, 2007",
+           x="Log 10 of GDP per capita", 
+           y="Life expectancy")+
+      geom_smooth(aes(color=continent), method="lm", se=FALSE) + 
+  scale_colour_viridis(discrete = TRUE) +
+  theme_bw()
+
+ggplotly(plot07)
+
+#can save with: 
+plotly07<-ggplotly(plot07)
+saveWidget(as_widget(plotly07), "plotly07.html")
+```
