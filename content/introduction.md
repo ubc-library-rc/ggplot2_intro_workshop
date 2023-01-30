@@ -45,4 +45,4 @@ Output
 
 file: 
 
-[R Viz with answers](https://ubc-library-rc.github.io/R-viz/content/R_Viz_NEW.Rmd)
+![R Viz with answers](https://ubc-library-rc.github.io/R-viz/content/R_Viz_NEW.Rmd)
