@@ -1,94 +1,112 @@
 {"0": {
-    "doc": "Interative plots",
-    "title": "Interative plots",
-    "content": "interactive plots . ",
+    "doc": "Animated and interative plots",
+    "title": "Animated and Interative plots",
+    "content": "This code can take time to run, so we will go through it here instead of in RMarkdown. We can take our plot of GDP per capita vs life expectancy by year: . and instead animate it, to have one plot: . Input . countries$year&lt;-as.numeric(countries$year) #need our data to be categorical instead of continuous for this gif_countries &lt;- ggplot(aes(x=log(gdpPercap), y=lifeExp), data = countries)+ geom_point(aes(col = continent), alpha = 0.75)+ scale_colour_viridis(discrete = TRUE)+ transition_time(year)+ #creating gif through time shadow_wake(wake_length = 0.5)+ #adding tails labs(title=\"Life expectancy vs GDP per capita in {frame_time}\", x=\"Log 10 of GDP per capita\", y=\"Life expectancy\")+ theme_bw() gif_countries #can save with: anim_save(\"countries.gif\", animation = gif_countries, path = NULL) . Output . we could also make this plot interactive. For illustrative purposes we will do this for one year (2007): . Input . countries07 &lt;- countries[countries$year==2007,] #filtering data to 2007 plot07 &lt;- ggplot(aes(x=log(gdpPercap), y=lifeExp), data = countries07)+ geom_point(aes( color=continent))+ labs(title=\"Life expectancy vs GDP per capita, 2007\", x=\"Log 10 of GDP per capita\", y=\"Life expectancy\")+ geom_smooth(aes(color=continent), method=\"lm\", se=FALSE) + scale_colour_viridis(discrete = TRUE) + theme_bw() ggplotly(plot07) #making interactive #can save with: plotly07&lt;-ggplotly(plot07) saveWidget(as_widget(plotly07), \"plotly07.html\") . Output . Click to view plot . ",
+    "url": "http://localhost:4000/content/Interactive.html#animated-and-interative-plots",
+    "relUrl": "/content/Interactive.html#animated-and-interative-plots"
+  },"1": {
+    "doc": "Animated and interative plots",
+    "title": "Animated and interative plots",
+    "content": " ",
     "url": "http://localhost:4000/content/Interactive.html",
     "relUrl": "/content/Interactive.html"
-  },"1": {
+  },"2": {
+    "doc": "Workshop files",
+    "title": "Files",
+    "content": "We will be working with an R Markdown file in this tutorial, available here: . A file with answers, for after the workshop is also available: . ",
+    "url": "http://localhost:4000/content/Workshop-Rmd-file.html#files",
+    "relUrl": "/content/Workshop-Rmd-file.html#files"
+  },"3": {
     "doc": "Workshop files",
     "title": "Workshop files",
-    "content": "Rmd file . ",
+    "content": " ",
     "url": "http://localhost:4000/content/Workshop-Rmd-file.html",
     "relUrl": "/content/Workshop-Rmd-file.html"
-  },"2": {
+  },"4": {
     "doc": "Acknowledgements",
     "title": "Acknowledgements",
     "content": "Site template adapted from the just-the-docs Jekyll template created by Patrick Marsceil and available under the MIT License. ",
     "url": "http://localhost:4000/acknowledgements.html",
     "relUrl": "/acknowledgements.html"
-  },"3": {
-    "doc": "Outline",
-    "title": "Note: this workshop is in development and not yet complete.",
-    "content": "R viz testing . ",
-    "url": "http://localhost:4000/#note-this-workshop-is-in-development-and-not-yet-complete",
-    "relUrl": "/#note-this-workshop-is-in-development-and-not-yet-complete"
-  },"4": {
-    "doc": "Outline",
-    "title": "Learning objectives",
-    "content": "At the end of this workshop, you will be able to: . | Visualize data | make a ggplot | code | . ",
-    "url": "http://localhost:4000/#learning-objectives",
-    "relUrl": "/#learning-objectives"
   },"5": {
-    "doc": "Outline",
-    "title": "Schedule",
-    "content": "| 0:00 | Welcome and using Zoom | . | 0:05 | Introduction | . | 0:15 | Intro to ggplot code | . | 0:30 |   | . | 0:45 |   | . | 1:00 | Wrap-up and Discussion | . ",
-    "url": "http://localhost:4000/#schedule",
-    "relUrl": "/#schedule"
+    "doc": "Conclusions",
+    "title": "Conclusions",
+    "content": "1. ggplot2 is a powerful tool for visualizaiton, thanks to the grammar of graphics . 2. ggplot code can get very long, and very complicated fast . 3. The goal is not to memorize how to do everything, but understand the underlying logic . Cheatsheets are available for quick referral: . | ggplot2 cheat sheet (posit) | ggplot2 cheat sheet (datacamp) | . Custom themes can also help shorten and simplify code. See this tutorial or book a consultation with the research commons if interested: . | Tutorial | Book a consultation | . ",
+    "url": "http://localhost:4000/content/conclusions.html",
+    "relUrl": "/content/conclusions.html"
   },"6": {
     "doc": "Outline",
+    "title": "Welcome to Data Visualization with ggplot2",
+    "content": "Through this workshop, we hope to equip you with the skills to make effective and eye-catching visualizations, with any data. ",
+    "url": "http://localhost:4000/#welcome-to-data-visualization-with-ggplot2",
+    "relUrl": "/#welcome-to-data-visualization-with-ggplot2"
+  },"7": {
+    "doc": "Outline",
+    "title": "Learning objectives",
+    "content": "At the end of this workshop, you will be (able to): . | Be familiar with the basic grammar of ggplot2 | Make ggplots for different kinds of data | Customize ggplots for more effective and aesthtically pleasing visualizations | . ",
+    "url": "http://localhost:4000/#learning-objectives",
+    "relUrl": "/#learning-objectives"
+  },"8": {
+    "doc": "Outline",
+    "title": "Schedule",
+    "content": "| 0:00 | Welcome and using Zoom | . | 0:05 | Introduction | . | 0:10 | Workshop code | . | 0:50 | Interactive and animated plots | . | 0:55 | Conclusion and discussion | . ",
+    "url": "http://localhost:4000/#schedule",
+    "relUrl": "/#schedule"
+  },"9": {
+    "doc": "Outline",
     "title": "Resources",
-    "content": ". | [eg. link to external slides] | . ",
+    "content": "Cheat sheets to ggplot code: . | ggplot2 cheat sheet (posit) | ggplot2 cheat sheet (datacamp) | . ",
     "url": "http://localhost:4000/#resources",
     "relUrl": "/#resources"
-  },"7": {
+  },"10": {
     "doc": "Outline",
     "title": "Outline",
     "content": " ",
     "url": "http://localhost:4000/",
     "relUrl": "/"
-  },"8": {
+  },"11": {
     "doc": "Workshop content",
     "title": "Introduction to ggplot2",
     "content": "ggplot2 is based on a grammar of graphics: “a tool that enables us to concisely describe the components of a graphic” (Hadley Wickham) . This allows us to build complex graphical representations of our data from consistent, essential building blocks. Once you understand the logic and grammar of ggplot, you can create almost any kind of plot you might need. The basic structure of ggplot code is as follows: . ggplot(aes(x, y), data) + #specifying your axes, data geom + #indicating the type of plot, e.g scatter, line, etc. additional geoms + #layering types of plots thematic arguments #a number of arguments to modify theme/aesthetics . For example, . this code: . Input . $ ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) + #axes and data $ geom_point() + #plot type (point/scatter) $ labs(x = 'Petal length (cm)', #thematic arguments $ y = 'Sepal length (cm)', $ title = 'Petal length vs sepal length of irises') . creates this plot : . Output . ",
     "url": "http://localhost:4000/content/introduction.html#introduction-to-ggplot2",
     "relUrl": "/content/introduction.html#introduction-to-ggplot2"
-  },"9": {
+  },"12": {
     "doc": "Workshop content",
     "title": "Workshop content",
     "content": " ",
     "url": "http://localhost:4000/content/introduction.html",
     "relUrl": "/content/introduction.html"
-  },"10": {
+  },"13": {
     "doc": "Land acknowledgement",
     "title": "Land acknowledgement",
-    "content": "Before beginning the workshop, we’d like to acknowledge the indigenous lands where we are located. UBC Vancouver is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam), səl̓ilwətaɁɬ təməxʷ (Tsleil-Waututh), Stz’uminus, S’ólh Téméxw (Stó:lō), Skwxwú7mesh-ulh Temíx̱w (Squamish), and Coast Salish peoples. Please take a moment to explore native-land.ca so that you can visualize the indigenous territories, languages, and treaties in your area. ",
+    "content": "Before beginning the workshop, we’d like to acknowledge the Indigenous lands where we are located. UBC Vancouver is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam), səl̓ilwətaɁɬ təməxʷ (Tsleil-Waututh), and Skwxwú7mesh-ulh Temíx̱w (Squamish) peoples. Please take a moment to explore native-land.ca so that you can visualize the Indigenous territories, languages, and treaties in your area. ",
     "url": "http://localhost:4000/land-acknowledgement.html",
     "relUrl": "/land-acknowledgement.html"
-  },"11": {
+  },"14": {
     "doc": "Participating online",
     "title": "Participating online",
     "content": "Active participation enlivens the session with other voices and perspectives. We encourage you to engage with instructors and with each other. Microphones are muted by default to improve audio quality and recording is disabled to preserve participant privacy. The Zoom toolbar provides several ways to be part of the conversation: . ",
     "url": "http://localhost:4000/online.html",
     "relUrl": "/online.html"
-  },"12": {
+  },"15": {
     "doc": "Participating online",
     "title": "Reactions menu",
     "content": "Open the Reactions menu and click an icon to communicate with the instructors. Use this to answer yes/no questions or to raise your hand when instructors invite you to ask a question, comment, or share your screen. ",
     "url": "http://localhost:4000/online.html#reactions-menu",
     "relUrl": "/online.html#reactions-menu"
-  },"13": {
+  },"16": {
     "doc": "Participating online",
     "title": "Chat window",
     "content": "Use the Chat window to comment or ask a question at any time. Instructors will do their best to respond, sometimes waiting for a break in the lesson to do so. The Chat window is a good place to report problems with your audio connection. Instructors may also use it to share links to material mentioned in the session. ",
     "url": "http://localhost:4000/online.html#chat-window",
     "relUrl": "/online.html#chat-window"
-  },"14": {
+  },"17": {
     "doc": "Participating online",
     "title": "Share your screen",
     "content": "In some cases instructors may invite you to share your screen. Raise your hand to indicate that you’re ready to share. When called upon click Share screen, select a window to display, and click Share. ",
     "url": "http://localhost:4000/online.html#share-your-screen",
     "relUrl": "/online.html#share-your-screen"
-  },"15": {
+  },"18": {
     "doc": "Participating online",
     "title": "Contribute to the Whiteboard",
     "content": "The Whiteboard is a collaborative space that everyone can annotate with drawings and text. When the whiteboard is shared click View options and select Annotate. This opens the annotation toolbar. Drawings and text you add to the screen will be visible to everyone in the session or breakout room. ",

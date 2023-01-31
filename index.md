@@ -4,25 +4,28 @@ title: Outline
 nav_order: 1
 ---
 
-## Note: this workshop is in development and not yet complete.
+# Welcome to Data Visualization with ggplot2
 
-R viz testing
+Through this workshop, we hope to equip you with the skills to make effective and eye-catching visualizations, with any data. 
 
 ## Learning objectives
 
-At the end of this workshop, you will be able to:
-1. Visualize data 
-2. make a ggplot
-3. code
+At the end of this workshop, you will be (able to):
+1. Be familiar with the basic grammar of ggplot2
+2. Make ggplots for different kinds of data
+3. Customize ggplots for more effective and aesthtically pleasing visualizations
 
 ## Schedule
 
-| 0:00 | Welcome and using Zoom|
+| 0:00 | Welcome and using Zoom |
 | 0:05 | Introduction |  
-| 0:15 | Intro to ggplot code|
-| 0:30 |  |   
-| 0:45 |  |
-| 1:00 | Wrap-up and Discussion |
+| 0:10 | Workshop code |
+| 0:50 | Interactive and animated plots |   
+| 0:55 | Conclusion and discussion |
 
 ## Resources
-* [eg. link to external slides]
+
+Cheat sheets to ggplot code: 
+
+* [ggplot2 cheat sheet (posit)](https://posit.co/resources/cheatsheets/?type=posit-cheatsheets&_page=1/)
+* [ggplot2 cheat sheet (datacamp)](https://www.datacamp.com/cheat-sheet/ggplot2-cheat-sheet)
