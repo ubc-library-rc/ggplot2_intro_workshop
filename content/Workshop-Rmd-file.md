@@ -2,7 +2,7 @@
 layout: default
 title: Workshop files
 nav_order: 6
-parent: Workshop Content
+parent: Workshop content
 has_toc: false
 ---
 
