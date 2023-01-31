@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Workshop Content
-nav_order: 4
+title: Workshop content
+nav_order: 5
 has_children: true
 has_toc: false
 ---
@@ -45,6 +45,3 @@ Output
 ![](https://ubc-library-rc.github.io/R-viz/content/images/Rplot.png)
 
 
-file: 
-
-![R Viz with answers](https://ubc-library-rc.github.io/R-viz/content/R_Viz_NEW.Rmd)

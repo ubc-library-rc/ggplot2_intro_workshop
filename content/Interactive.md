@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Workshop files
+title: Interative plots
 nav_order: 6
 parent: Workshop Content
 has_toc: false
 ---
 
-Rmd file
+interactive plots
