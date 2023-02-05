@@ -15,7 +15,7 @@ has_toc: false
 Cheatsheets are available for quick referral: 
 
 
-* [ggplot2 cheat sheet (posit)](https://posit.co/resources/cheatsheets/?type=posit-cheatsheets&_page=1/)
+* [ggplot2 cheat sheet (posit)](https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf)
 * [ggplot2 cheat sheet (datacamp)](https://www.datacamp.com/cheat-sheet/ggplot2-cheat-sheet)
 <br/><br/>
 

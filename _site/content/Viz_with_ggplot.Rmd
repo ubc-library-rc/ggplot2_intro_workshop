@@ -25,7 +25,7 @@ Remove the #s if you need to run this code to install a package/multiple package
 #install.packages("plotly")
 #install.packages("gganimate")
 #install.packages("gifski")
-#install.packages("htmlwidget")
+#install.packages("htmlwidgets")
 ```
 
 Load packages

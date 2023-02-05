@@ -8,7 +8,7 @@ has_toc: false
 # Introduction to ggplot2
 
 **ggplot2 is based on a *grammar of graphics*:**
-"a tool that enables us to concisely describe the components of a graphic" (Hadley Wickham)
+"a tool that enables us to concisely describe the components of a graphic" [^1]
 
 This allows us to build complex graphical representations of our data from consistent, essential building blocks. 
 
@@ -44,4 +44,4 @@ Output
 
 ![](https://ubc-library-rc.github.io/R-viz/content/images/Rplot.png)
 
-
+[^1]: Hadley Wickham. 2010. A Layered Grammar of Graphics. *Journal of Computational and Graphical Statistics* 19(1):3–28
