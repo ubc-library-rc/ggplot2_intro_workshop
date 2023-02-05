@@ -100,17 +100,5 @@
     "content": "Use the Chat window to comment or ask a question at any time. Instructors will do their best to respond, sometimes waiting for a break in the lesson to do so. The Chat window is a good place to report problems with your audio connection. Instructors may also use it to share links to material mentioned in the session. ",
     "url": "http://localhost:4000/online.html#chat-window",
     "relUrl": "/online.html#chat-window"
-  },"17": {
-    "doc": "Participating online",
-    "title": "Share your screen",
-    "content": "In some cases instructors may invite you to share your screen. Raise your hand to indicate that you’re ready to share. When called upon click Share screen, select a window to display, and click Share. ",
-    "url": "http://localhost:4000/online.html#share-your-screen",
-    "relUrl": "/online.html#share-your-screen"
-  },"18": {
-    "doc": "Participating online",
-    "title": "Contribute to the Whiteboard",
-    "content": "The Whiteboard is a collaborative space that everyone can annotate with drawings and text. When the whiteboard is shared click View options and select Annotate. This opens the annotation toolbar. Drawings and text you add to the screen will be visible to everyone in the session or breakout room. ",
-    "url": "http://localhost:4000/online.html#contribute-to-the-whiteboard",
-    "relUrl": "/online.html#contribute-to-the-whiteboard"
   }
 }
