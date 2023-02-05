@@ -71,5 +71,5 @@ saveWidget(as_widget(plotly07), "plotly07.html")
 Output
 {: .label .label-yellow }
 
-[Click to view plot](/content/images/plotly07.html)
+[Click to view plot](/plotly07.html)
 
