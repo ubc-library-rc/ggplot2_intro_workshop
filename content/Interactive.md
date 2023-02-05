@@ -12,7 +12,7 @@ has_toc: false
 
 We can take our plot of GDP per capita vs life expectancy by year: 
 
-![](/content/images/regplot.png)
+![](regplot.png)
 <br/><br/>
 
 and instead ***animate it***, to have one plot: 
