@@ -302,7 +302,7 @@ ggplot(aes(x=log(gdpPercap), y=lifeExp), data = countries)+
 And perhaps more powerfully, we could animate our plot to show the evolution of our trend through time: 
 
 ```{r}
-countries$year<-as.numeric(countries$year) #need our data to be categorical instead of continuous for this
+countries$year<-as.numeric(countries$year) #need our data to be numerical instead of categorical for this
 
 gif_countries <- 
   ggplot(aes(x=log(gdpPercap), y=lifeExp), 
@@ -323,7 +323,7 @@ anim_save("countries.gif", animation = gif_countries, path = NULL)
 ```
 
 
-We could also make our plot interactive, instead of animated. For illustrative purposes, we will restrict our data to 2007. 
+We could also make our plot interactive, instead of animated. We will start with restricting our data to 2007. 
 
 ```{r}
 getwd()
@@ -343,4 +343,25 @@ ggplotly(plot07) #making interactive
 #can save with: 
 plotly07<-ggplotly(plot07)
 saveWidget(as_widget(plotly07), "plotly07.html")
+```
+
+We could add year as a frame so that we can see changes over time:
+
+```{r}
+plot1 <- ggplot(aes(x=log(gdpPercap), y=lifeExp, 
+                    frame=year), #adding frame to aes
+                    data = countries)+
+       geom_point(aes(color=continent))+
+      labs(title="Life expectancy vs GDP per capita, 2007",
+           x="Log 10 of GDP per capita", 
+           y="Life expectancy")+
+      geom_smooth(aes(color=continent), method="lm", se=FALSE) + 
+  scale_colour_viridis(discrete = TRUE) +
+  theme_bw()
+
+ggplotly(plot1)
+
+#save the object as an html file, using htmlwidget package
+plotly1<-ggplotly(plot1)
+saveWidget(as_widget(plotly1), "plotly1.html")
 ```

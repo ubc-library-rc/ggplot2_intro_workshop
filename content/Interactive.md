@@ -20,7 +20,7 @@ and instead ***animate it***, to have one plot:
 Input
 {: .label .label-green }
 ```sh
-countries$year<-as.numeric(countries$year) #need our data to be categorical instead of continuous for this
+countries$year<-as.numeric(countries$year) #need our data to be numeric instead of categorical for this
 
 gif_countries <- 
   ggplot(aes(x=log(gdpPercap), y=lifeExp), 
@@ -45,7 +45,7 @@ Output
 ![Animated plot](https://media.giphy.com/media/TaizJ94JHqZb13iwuE/giphy.gif)
 <br/><br/>
 
-we could also ***make this plot interactive***. For illustrative purposes we will do this for one year (2007): 
+we could also ***make this plot interactive***. We will start with restricting our data to 2007. 
 
 Input
 {: .label .label-green }
@@ -72,4 +72,32 @@ Output
 {: .label .label-yellow }
 
 [Click to view plot](/plotly07.html)
+<br/><br/>
 
+We could add year as a frame so that we can see changes over time:
+
+Input
+{: .label .label-green }
+```sh
+plot1 <- ggplot(aes(x=log(gdpPercap), y=lifeExp, 
+                    frame=year), #adding frame to aes
+                    data = countries)+
+       geom_point(aes(color=continent))+
+      labs(title="Life expectancy vs GDP per capita, 2007",
+           x="Log 10 of GDP per capita", 
+           y="Life expectancy")+
+      geom_smooth(aes(color=continent), method="lm", se=FALSE) + 
+  scale_colour_viridis(discrete = TRUE) +
+  theme_bw()
+
+ggplotly(plot1)
+
+#save the object as an html file, using htmlwidget package
+plotly1<-ggplotly(plot1)
+saveWidget(as_widget(plotly1), "plotly1.html")
+```
+Output
+{: .label .label-yellow }
+
+[Click to view plot](/plotly1.html)
+<br/><br/>
