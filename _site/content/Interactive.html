@@ -36,7 +36,7 @@ saveWidget<span class="o">(</span>as_widget<span class="o">(</span>plotly07<span
                     <span class="nv">frame</span><span class="o">=</span>year<span class="o">)</span>, <span class="c">#adding frame to aes</span>
                     data <span class="o">=</span> countries<span class="o">)</span>+
        geom_point<span class="o">(</span>aes<span class="o">(</span><span class="nv">color</span><span class="o">=</span>continent<span class="o">))</span>+
-      labs<span class="o">(</span><span class="nv">title</span><span class="o">=</span><span class="s2">"Life expectancy vs GDP per capita, 2007"</span>,
+      labs<span class="o">(</span><span class="nv">title</span><span class="o">=</span><span class="s2">"Life expectancy vs GDP per capita through time"</span>,
            <span class="nv">x</span><span class="o">=</span><span class="s2">"Log 10 of GDP per capita"</span>, 
            <span class="nv">y</span><span class="o">=</span><span class="s2">"Life expectancy"</span><span class="o">)</span>+
       geom_smooth<span class="o">(</span>aes<span class="o">(</span><span class="nv">color</span><span class="o">=</span>continent<span class="o">)</span>, <span class="nv">method</span><span class="o">=</span><span class="s2">"lm"</span>, <span class="nv">se</span><span class="o">=</span>FALSE<span class="o">)</span> + 

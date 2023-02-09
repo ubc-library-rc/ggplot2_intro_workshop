@@ -352,7 +352,7 @@ plot1 <- ggplot(aes(x=log(gdpPercap), y=lifeExp,
                     frame=year), #adding frame to aes
                     data = countries)+
        geom_point(aes(color=continent))+
-      labs(title="Life expectancy vs GDP per capita, 2007",
+      labs(title="Life expectancy vs GDP per capita through time",
            x="Log 10 of GDP per capita", 
            y="Life expectancy")+
       geom_smooth(aes(color=continent), method="lm", se=FALSE) + 
