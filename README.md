@@ -1,4 +1,4 @@
-# Data visualizatin with ggplot2
+# Data visualization with ggplot2
 ### UBC Library Research Commons
  
 Link to workshop: https://ubc-library-rc.github.io/R-viz/
