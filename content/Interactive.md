@@ -42,7 +42,7 @@ anim_save("countries.gif", animation = gif_countries, path = NULL)
 
 Output
 {: .label .label-yellow }
-![Animated plot](/countries.gif)
+![Animated plot](https://github.com/ubc-library-rc/R-viz/blob/main/content/images/countries.gif?raw=true)
 <br/><br/>
 
 we could also ***make this plot interactive***. We will start with restricting our data to 2007.
