@@ -13,7 +13,7 @@ Through this workshop, we hope to equip you with the skills to make effective an
 At the end of this workshop, you will be (able to):
 1. Be familiar with the basic grammar of ggplot2
 2. Make ggplots for different kinds of data
-3. Customize ggplots for more effective and aesthtically pleasing visualizations
+3. Customize ggplots for more effective and aesthetically pleasing visualizations
 
 ## Schedule
 
