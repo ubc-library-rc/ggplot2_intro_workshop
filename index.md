@@ -33,4 +33,4 @@ Cheat sheets to ggplot code:
 
 
 
-<p style="color:grey; font-size:11px"> This workshop series was developed by Jared Connoy and Ashley Yue Mao.
+<p style="color:grey; font-size:14px; padding-top: 2em"> This workshop was developed by Jared Connoy (Author) and Ashley Yue Mao (Contributor).
