@@ -33,7 +33,7 @@ In general, the best strategy to make plots is to get the bare bones plot, then 
 
 ### Example plot building workflow
 
-#### 1 - make the bare bones plot
+#### 1 - Make the bare bones plot
 ``` r
 ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) + 
 geom_point()
