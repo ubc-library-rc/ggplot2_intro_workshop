@@ -103,6 +103,8 @@ ggplot(aes(x = continent, y = lifeExp), data = countries) +
 
 ### PRACTICE: 
 
+For all practices today, could you paste your answers in the chat to let us know how many people have completed the practice? 
+
 Using the iris dataset, create a scatter plot ( geom_point() )
 of Petal.Length (x variable) vs Sepal.length (y variable)
 
