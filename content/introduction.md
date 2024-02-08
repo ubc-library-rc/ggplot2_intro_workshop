@@ -38,8 +38,10 @@ In general, the best strategy to make plots is to get the bare bones plot, then 
 ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) + 
 geom_point()
 ```
+<div style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px">
+<img src="bare_bones.png" alt="bare-bones ggplot2 dotplot" width="50%"/>
+</div>
 
-![](bare_bones.png)
 #### 2 - Make more major aestetic changes
 By major changes, we mean adding completely new parameters, like the color argument added in the aes section
 
@@ -47,8 +49,10 @@ By major changes, we mean adding completely new parameters, like the color argum
 ggplot(aes(x = Petal.Length, y = Sepal.Length, color=Species), data = iris) + 
 geom_point() 
 ```
+<div style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px">
+<img src="with_color.png" alt="bare-bones ggplot2 dotplot with color" width="50%"/>
+</div>
 
-![](with_color.png)
 #### 3 - Make more minor aestetic changes
 These changes modify parts of your plot that already exist. Here, we are modifying the color or the points, adding a title to the plot, and changing the plot background. 
 ``` r 
@@ -60,5 +64,6 @@ title = 'Petal length vs sepal length of irises')+
 scale_color_manual(values=c("magenta", "purple", "blue"))+ ## change point color using colors from https://htmlcolorcodes.com/color-names/ 
 theme_minimal() ## set a pretty background theme
 ```
-
-![](full_plot.png)
+<div style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px">
+<img src="full_plot.png" alt="ggplot2 dotplot with lots of midifications" width="50%"/>
+</div>
