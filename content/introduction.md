@@ -33,29 +33,37 @@ In general, the best strategy to make plots is to get the bare bones plot, then 
 
 ### Example plot building workflow
 
+Just watch for this section. The rest of the workshop is all practical, coding along exercises.
+
 #### 1 - Make the bare bones plot
+
 ``` r
 ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) + 
 geom_point()
 ```
-<div style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px">
+
+::: {style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px"}
 <img src="bare_bones.png" alt="bare-bones ggplot2 dotplot" width="50%"/>
-</div>
+:::
 
 #### 2 - Make more major aestetic changes
+
 By major changes, we mean adding completely new parameters, like the color argument added in the aes section
 
 ``` r
 ggplot(aes(x = Petal.Length, y = Sepal.Length, color=Species), data = iris) + 
 geom_point() 
 ```
-<div style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px">
+
+::: {style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px"}
 <img src="with_color.png" alt="bare-bones ggplot2 dotplot with color" width="50%"/>
-</div>
+:::
 
 #### 3 - Make more minor aestetic changes
-These changes modify parts of your plot that already exist. Here, we are modifying the color or the points, adding a title to the plot, and changing the plot background. 
-``` r 
+
+These changes modify parts of your plot that already exist. Here, we are modifying the color or the points, adding a title to the plot, and changing the plot background.
+
+``` r
 ggplot(aes(x = Petal.Length, y = Sepal.Length, color=Species), data = iris) + 
 geom_point(cex=3) + ## change point size
 labs(x = 'Petal length (cm)',   ## add labels
@@ -64,6 +72,7 @@ title = 'Petal length vs sepal length of irises')+
 scale_color_manual(values=c("magenta", "purple", "blue"))+ ## change point color using colors from https://htmlcolorcodes.com/color-names/ 
 theme_minimal() ## set a pretty background theme
 ```
-<div style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px">
+
+::: {style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px"}
 <img src="full_plot.png" alt="ggplot2 dotplot with lots of midifications" width="50%"/>
-</div>
+:::

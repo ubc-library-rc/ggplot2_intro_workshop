@@ -8,6 +8,19 @@ nav_order: 1
 
 Through this workshop, we hope to equip you with the skills to make effective and eye-catching visualizations, with any data.
 
+Before the workshop, install the following packages with the install.packages("PACKAGE NAME")
+<strong>Need to have</strong>
+ggplot2
+gapminder
+RColorBrewer
+
+<strong>Nice to have to make one plot right at the end</strong>
+gganimate
+plotly
+gganimate
+gifski
+htmlwidgets
+
 ## Learning objectives
 
 At the end of this workshop, you will be (able to):
