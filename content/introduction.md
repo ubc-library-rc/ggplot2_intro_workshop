@@ -42,9 +42,8 @@ ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
 geom_point()
 ```
 
-::: {style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px"}
 <img src="bare_bones.png" alt="bare-bones ggplot2 dotplot" width="50%"/>
-:::
+
 
 #### 2 - Make more major aestetic changes
 
@@ -55,9 +54,9 @@ ggplot(aes(x = Petal.Length, y = Sepal.Length, color=Species), data = iris) +
 geom_point() 
 ```
 
-::: {style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px"}
+
 <img src="with_color.png" alt="bare-bones ggplot2 dotplot with color" width="50%"/>
-:::
+
 
 #### 3 - Make more minor aestetic changes
 
@@ -73,6 +72,5 @@ scale_color_manual(values=c("magenta", "purple", "blue"))+ ## change point color
 theme_minimal() ## set a pretty background theme
 ```
 
-::: {style="margin-left: 5%; margin-top: 20px; margin-bottom: 40px"}
 <img src="full_plot.png" alt="ggplot2 dotplot with lots of midifications" width="50%"/>
-:::
+
