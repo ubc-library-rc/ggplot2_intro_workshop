@@ -74,3 +74,35 @@ theme_minimal() ## set a pretty background theme
 
 <img src="full_plot.png" alt="ggplot2 dotplot with lots of midifications" width="50%"/>
 
+## Shortcut to consistent plots
+You can specifiy a lot of the theme elements at the start of your R script when loading ggplot2.
+Here is an example of what that looks like:
+
+``` r
+library(ggplot2)+theme_set(theme_bw()+
+                             theme(strip.background = element_rect(fill="white"),
+                                   axis.text.y = element_text(colour = "black", size = 12, face = "bold"),
+                                   axis.text.x = element_text(colour = "black", face = "bold", size = 12),
+                                   legend.text = element_text(size = 8, face ="bold", colour ="black"),
+                                   legend.position = "right", axis.title.y = element_text(face = "bold", size = 14),
+                                   axis.title.x = element_text(face = "bold", size = 14, colour = "black"),
+                                   legend.title = element_text(size = 14, colour = "black", face = "bold"),
+                                   legend.key=element_blank(),
+                                   axis.ticks = element_blank(),
+                                   panel.grid.major = element_blank(), 
+                                   panel.grid.minor = element_blank()
+                             ))
+```
+
+
+## Saving plots
+You can save the plots directly within your R script! Here is an example:
+``` r
+## Not specifying the path (will save in working directory)
+ggsave("filename.pdf", width=15, height=11.8, units="in")
+
+## Specifying the path (will save where the path leads)
+ggsave(paste0(path, "filename.pdf"), width=15, height=11.8, units="in")
+```
+
+
