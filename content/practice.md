@@ -57,3 +57,19 @@ P6: Change the color and size of the axes labels
    <p>scale_fill_manual(values=c("#7b01a0","#a07b01","#01a07b"))+</p> 
   <p><strong>theme(axis.text = element_text(colour = "black", size = 10))</strong></p>
 </details>
+
+## Section 2 - Dot plots/scatter plot
+P7: Make a dot plot of petal length and petal with. Add linear regression lines to fit the points. Color the lines and the points by species. 
+<details><summary><strong> Answer P7</strong></summary>
+
+  <p>ggplot(iris, aes(x=Petal.Width, y=Petal.Length, color=Species))+</p>
+ <p> geom_point()+</p>
+ <p> geom_smooth(method="lm")</p>
+  </details>
+
+## Section 3 - Histograms
+  P8: Make a histogram of petal width and color the bars by species. 
+<details><summary><strong> Answer P8</strong></summary>
+  ggplot(iris, aes(x=Petal.Width, fill=Species))+
+  geom_histogram()
+    </details>
