@@ -19,6 +19,14 @@ with the plot, which is very fun. If you want to learn more about this,
 you can check out our <a href="https://ubc-library-rc.github.io/intro_shiny_app/" target="_blank"> workshop on how to make RShiny</a>
 
 ``` r
+#Nice to have packages
+library(gganimate) # package for producing gifs, extension of ggplot2
+library(plotly)
+library(gganimate)
+library(gifski)
+library(htmlwidgets)
+
+## plot code
 plot1 <- ggplot(aes(
   x = log(gdpPercap),
   y = lifeExp,
