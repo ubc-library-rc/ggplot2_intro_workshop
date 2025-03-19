@@ -71,7 +71,7 @@ This is similar to a histogram, but a histogram is for showing the distribution 
 
 ```{r}
 ggplot(aes(x = lifeExp), data = countries) +
-  geom_histogram(bins = 50)
+  geom_histogram(bins = 60)
 ```
 
 To create a plot with an x and a y variable, all we need to do is specify an additional argument.
@@ -191,7 +191,7 @@ ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
   geom_smooth(method = 'lm',
               se = FALSE,
               col = 'black') +
-  theme_bw() #black and white theme 
+  theme_classic() #black and white theme 
 ```
 
 or:
@@ -226,8 +226,7 @@ ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
 You can save your graphs from the plot window, or to your working directory using code (with the ggsave function) if you assign your plot to an object:
 
 ```{r}
-myplot <-
-  ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
+myplot <- ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
   geom_point(aes(col = Species)) +
   labs(x = 'Petal length (cm)',
        y = 'Sepal length (cm)',
@@ -258,11 +257,10 @@ getwd()
 
 ### PRACTICE:
 
-Using the countries dataset, plot gdpPercap (gdp per capita, x variable) vs lifeExp (life expectancy). Add a linear trend line to the plot.
+Using the countries dataset, plot gdpPercap (gdp per capita, x variable) vs lifeExp (life expectancy, y variable). Add a linear trend line to the plot.
 
 ```{r}
-#Answer: 
-
+#Answer:
 
 ```
 
@@ -303,9 +301,5 @@ ggplot(aes(x = log(gdpPercap), y = lifeExp), data = countries) +
               se = FALSE) +
   labs(x = 'log 10 of GDP per capita ($)', y = 'life expectancy (yrs)') +
   theme_bw() +
-  facet_grid(year~.) #facet by year
+  facet_grid(.~year) #facet by year
 ```
-
-
-
-
