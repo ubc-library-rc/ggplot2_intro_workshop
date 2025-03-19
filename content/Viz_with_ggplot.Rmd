@@ -235,11 +235,12 @@ myplot <-
   geom_smooth(method = 'lm',
               se = FALSE,
               col = 'grey25') +
-  scale_color_brewer(palette = "Dark2")
+  scale_color_brewer(palette = "Dark2")+
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5,
                                   face = 'bold',
                                   size = 16))
+myplot
 
 ggsave(
   "myplot.png",
@@ -257,7 +258,7 @@ getwd()
 
 ### PRACTICE:
 
-Using the countries dataset, plot gdpPercap (gdp per capita, x variable) vs lifeExp (life expectancy). Add a linear trendline to the plot.
+Using the countries dataset, plot gdpPercap (gdp per capita, x variable) vs lifeExp (life expectancy). Add a linear trend line to the plot.
 
 ```{r}
 #Answer: 
@@ -305,39 +306,6 @@ ggplot(aes(x = log(gdpPercap), y = lifeExp), data = countries) +
   facet_grid(year~.) #facet by year
 ```
 
-## 5.ANIMATED AND INTERACTIVE PLOTS
 
-And perhaps more powerfully, we could animate our plot to show the evolution of our trend through time:
 
-This is meant as a demo of what you can do in ggplot2. You can just follow along again, or if you successfully downloaded the "nice to have" packages, you can code along.
 
-```{r}
-#Nice to have packages
-library(gganimate) # package for producing gifs, extension of ggplot2
-library(plotly)
-library(gganimate)
-library(gifski)
-library(htmlwidgets)
-
-```
-
-```{r}
-plot1 <- ggplot(aes(
-  x = log(gdpPercap),
-  y = lifeExp,
-  frame = year
-), #adding frame to aes
-data = countries) +
-  geom_point(aes(color = continent)) +
-  labs(title = "Life expectancy vs GDP per capita through time",
-       x = "Log 10 of GDP per capita",
-       y = "Life expectancy") +
-  geom_smooth(aes(color = continent), method = "lm", se = FALSE) +
-  theme_bw()
-
-ggplotly(plot1)
-
-#save the object as an html file, using htmlwidget package
-plotly1 <- ggplotly(plot1)
-saveWidget(as_widget(plotly1), "plotly1.html")
-```
