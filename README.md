@@ -1,6 +1,8 @@
 # Data visualization with ggplot2
 ### UBC Library Research Commons
 
+Description: Through this workshop introduces participants to the skills to make effective, eye-catching, and reproducible visualizations using the ggplot2 package in R.
+
 Link to workshop: https://ubc-library-rc.github.io/ggplot2_intro_workshop/
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
