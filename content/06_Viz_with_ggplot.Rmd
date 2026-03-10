@@ -192,6 +192,10 @@ ggplot(aes(x = Petal.Length, y = Sepal.Length), data = iris) +
               se = FALSE,
               col = 'black') +
   theme_classic() #black and white theme 
+
+
+#To get one regression line per species, move the grouping into aes() such as:
+#geom_smooth(aes(col = Species), method = 'lm', se = FALSE)
 ```
 
 or:
