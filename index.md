@@ -8,18 +8,18 @@ nav_order: 1
 
 Through this workshop, we hope to equip you with the skills to make effective and eye-catching visualizations, with any data.
 
-Before the workshop, install the following packages with the install.packages("PACKAGE NAME")
-<strong>Need to have</strong>
-ggplot2
-gapminder
-RColorBrewer
+Before the workshop, install the following packages with `install.packages("PACKAGE NAME")`:
 
-<strong>Nice to have to make one plot right at the end</strong>
-gganimate
-plotly
-gganimate
-gifski
-htmlwidgets
+**Need to have**
+- ggplot2
+- gapminder
+- RColorBrewer
+
+**Nice to have (optional)** (to make one plot right at the end)
+- gganimate
+- plotly
+- gifski
+- htmlwidgets
 
 ## Learning objectives
 
@@ -46,4 +46,4 @@ Cheat sheets to ggplot code:
 
 
 
-<p style="color:grey; font-size:14px; padding-top: 2em"> This workshop was developed by Jared Connoy (Author) and Ashley Yue Mao (Contributor).
+<p style="color:grey; font-size:14px; padding-top: 2em"> This workshop was developed by Jared Connoy (Author), Ashley Yue Mao (Contributor) and Grigory Artazyan (Contributor).
