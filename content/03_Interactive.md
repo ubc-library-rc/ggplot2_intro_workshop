@@ -4,6 +4,7 @@ title: Animated and interative plots
 nav_order: 7
 parent: Workshop content
 has_toc: false
+permalink: /content/Interactive.html
 editor_options: 
   markdown: 
     wrap: 72

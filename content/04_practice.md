@@ -4,6 +4,7 @@ title: Practice problems
 nav_order: 9
 parent: Workshop content
 has_toc: false
+permalink: /content/practice.html
 ---
 
 # GGPLOT2 Practice

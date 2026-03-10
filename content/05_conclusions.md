@@ -4,6 +4,7 @@ title: Conclusions
 nav_order: 8
 parent: Workshop content
 has_toc: false
+permalink: /content/conclusions.html
 ---
 
 # Conclusions 

@@ -4,6 +4,7 @@ title: Workshop content
 nav_order: 5
 has_children: true
 has_toc: false
+permalink: /content/introduction.html
 ---
 
 # Introduction to ggplot2
