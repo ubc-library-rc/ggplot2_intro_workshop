@@ -11,9 +11,10 @@ permalink: /content/practice.html
 All of these problems use the iris dataset. For the problems in the same section, you are building off the same plot code. Use online tools as needed (Google, ChatGPT) to find the answers as needed.
 
 ## Section 1 - box plot
-P1: Make a boxplot of petal length by iris species. 
 
-<details><summary><strong>Answer P1</strong></summary>
+**P1.** Make a boxplot of petal length by iris species.
+
+<details open markdown="1"><summary>Answer</summary>
 
 ``` r
 ggplot(iris, aes(x=Species, y=Petal.Length))+
@@ -22,8 +23,9 @@ ggplot(iris, aes(x=Species, y=Petal.Length))+
 
 </details>
 
-P2: Rename the x and y axes
-<details><summary><strong>Answer P2</strong></summary>
+**P2.** Rename the x and y axes.
+
+<details open markdown="1"><summary>Answer</summary>
 
 ``` r
 ggplot(iris, aes(x=Species, y=Petal.Length))+
@@ -33,8 +35,9 @@ ggplot(iris, aes(x=Species, y=Petal.Length))+
 
 </details>
 
-P3: Color the box outline and fill by iris species. 
-<details><summary><strong>Answer P3</strong></summary>
+**P3.** Color the box outline and fill by iris species.
+
+<details open markdown="1"><summary>Answer</summary>
 
 ``` r
 ggplot(iris, aes(x=Species, y=Petal.Length, fill=Species, color=Species))+
@@ -44,8 +47,9 @@ ggplot(iris, aes(x=Species, y=Petal.Length, fill=Species, color=Species))+
 
 </details>
 
-P4: Make the fill more transparent to be able to see the outline and median of the boxplots.
-<details><summary><strong>Answer P4</strong></summary>
+**P4.** Make the fill more transparent to be able to see the outline and median of the boxplots.
+
+<details open markdown="1"><summary>Answer</summary>
 
 ``` r
 ggplot(iris, aes(x=Species, y=Petal.Length, fill=Species, color=Species))+
@@ -53,12 +57,13 @@ ggplot(iris, aes(x=Species, y=Petal.Length, fill=Species, color=Species))+
   labs(x="Iris Species", y="Petal Length")
 ```
 
-Note: smaller alpha is more transparent. 1 = fully opaque, 0 = fully transparent.
+*Note: smaller alpha is more transparent. 1 = fully opaque, 0 = fully transparent.*
 
 </details>
 
-P5: Change the fill and color to custom colors. You can use any colors you want. I like <a href="https://htmlcolorcodes.com/color-picker/" target="_blank">this website</a> to find colors. 
-<details><summary><strong>Answer P5</strong></summary>
+**P5.** Change the fill and color to custom colors. You can use any colors you want. I like [this website](https://htmlcolorcodes.com/color-picker/) to find colors.
+
+<details open markdown="1"><summary>Answer</summary>
 
 ``` r
 ggplot(iris, aes(x=Species, y=Petal.Length, fill=Species, color=Species))+
@@ -70,8 +75,9 @@ ggplot(iris, aes(x=Species, y=Petal.Length, fill=Species, color=Species))+
 
 </details>
 
-P6: Change the color and size of the axes labels
-<details><summary><strong>Answer P6</strong></summary>
+**P6.** Change the color and size of the axes labels.
+
+<details open markdown="1"><summary>Answer</summary>
 
 ``` r
 ggplot(iris, aes(x=Species, y=Petal.Length, fill=Species, color=Species))+
@@ -85,8 +91,10 @@ ggplot(iris, aes(x=Species, y=Petal.Length, fill=Species, color=Species))+
 </details>
 
 ## Section 2 - Dot plots/scatter plot
-P7: Make a dot plot of petal length and petal with. Add linear regression lines to fit the points. Color the lines and the points by species. 
-<details><summary><strong>Answer P7</strong></summary>
+
+**P7.** Make a dot plot of petal length and petal width. Add linear regression lines to fit the points. Color the lines and the points by species.
+
+<details open markdown="1"><summary>Answer</summary>
 
 ``` r
 ggplot(iris, aes(x=Petal.Width, y=Petal.Length, color=Species))+
@@ -97,8 +105,10 @@ ggplot(iris, aes(x=Petal.Width, y=Petal.Length, color=Species))+
 </details>
 
 ## Section 3 - Histograms
-  P8: Make a histogram of petal width and color the bars by species. 
-<details><summary><strong>Answer P8</strong></summary>
+
+**P8.** Make a histogram of petal width and color the bars by species.
+
+<details open markdown="1"><summary>Answer</summary>
 
 ``` r
 ggplot(iris, aes(x=Petal.Width, fill=Species))+
