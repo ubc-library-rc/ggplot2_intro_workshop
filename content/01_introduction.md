@@ -30,7 +30,15 @@ The basic structure of ggplot code is as follows:
 
 ## Making the plots *pretty*
 
+When creating visualizations, keep these data visualization considerations in mind:n
+
+![Data Visualization Considerations](images/good_considerations.png)
+
+*Source: Statistics Canada (2023, Mar. 1). Communicating Data Like a Human [Workshop]. University of British Columbia, Vancouver Campus, UBC Library, Vancouver, BC, Canada.*
+
 In general, the best strategy to make plots is to get the bare bones plot, then add aesthetic parameters one at a time. That way, you know what causes errors if (likely when) they arise.
+
+
 
 ### Example plot building workflow
 

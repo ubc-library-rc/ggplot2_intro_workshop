@@ -47,6 +47,6 @@ ggplotly(plot1)
 plotly1 <- ggplotly(plot1)
 saveWidget(as_widget(plotly1), "plotly1.html")
 ```
-![output plot for life_expectancy and GDP](content/images/advanced_plot.png)
+![output plot for life_expectancy and GDP](images/advanced_plot.png)
 
 [Click to view plot](plotly1.html) <br/><br/>
